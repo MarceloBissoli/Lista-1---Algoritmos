@@ -1,0 +1,47 @@
+//Exercicio 5 - Calculo de indice corporal (IMC) e classificação;
+#include <iostream>
+using namespace std;
+
+int main (){
+	//Declaração de variaveis;
+	float altura, kilos,calculoImc;
+	char escolha;
+	
+	//entrada da altura e kilos;
+	do{
+	cout<<"Digite qual a sua altura (Metros): ";
+	cin>>altura;
+	cout<<"Digite qual o seu peso (Kilos): ";
+	cin>>kilos;
+	
+	//processamento de dados;
+	altura=altura/100;
+	calculoImc=(kilos / (altura*altura));
+	
+	//condicional para classificação de acordo com o Imc;
+	if (calculoImc<18.5){
+		cout<<"ABAIXO DO PESO!";
+	}
+	else if (calculoImc>=18.5 and calculoImc<24.9){
+		cout<<"PESO NORMAL!";
+	}
+	else if (calculoImc>=25.0 and calculoImc<29.9){
+		cout<<"SOBREPESO!";
+	}
+	else {
+		cout<<"OBESIDADE";
+	}
+	
+	//reprocessamento de código de acordo com a escolha;
+	cout<<"\nDeseja verificar um novo indice?(S/N) ";
+	cin>>escolha;
+	
+	}while(escolha=='S'or escolha=='s');
+	
+	//Encerramento do programa de acordo com a escolha;
+	if (escolha=='N'or escolha=='n'){
+		cout<<"\nPrograma Encerrado";
+	}
+	
+	return 0;
+}
