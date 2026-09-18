@@ -1,0 +1,25 @@
+//Exercicio 1 - Alteração de valores.
+#include <iostream>
+using namespace std;
+
+int main (){
+	//declaracao de variaveis;
+	int numero1, numero2, Variavelapoio;
+	
+	//entrada dos numeros inteiros;
+	cout<<"Digite o primeiro numero: ";
+	cin>>numero1;
+	cout<<"Digite o segundo numero: "; 
+	cin>>numero2;
+	
+	//Alteracao de valores entre as variaveis;
+	Variavelapoio = numero1;
+	numero1 = numero2;
+	numero2 = Variavelapoio;
+	
+	//Apresentação das mesmas com o conteúdo invertido;
+	cout<<"Conteudo da primeira variavel: "<<numero1; 
+	cout<<"\nConteudo da segunda varivael: "<<numero2;
+	
+	return 0;
+}
