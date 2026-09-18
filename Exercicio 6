@@ -1,0 +1,64 @@
+//Exercício 6 - Verificação de acesso;
+#include <iostream>
+using namespace std;
+
+int main (){
+	//declaração de variaveis;
+	int acessoAdm, acessoFuncionario, acessoVisitante, tentativaUsuario;
+	
+	//Códigos da tabela 1:
+	acessoAdm = 145;
+	acessoFuncionario=235;
+	acessoVisitante=322;
+	
+	//Apresentação do programa de código;
+	cout<<"========================================";
+	cout<<"\n              C++ LOGIN";
+	cout<<"\n========================================";
+	cout<<"\n         >>>SISTEMA DE ACESSO<<<" ;
+	cout<<"\n========================================";
+	
+	//entrada, reprocessamento do usuário e condicional em IF para verificação da tentativa;
+	do{
+	cout<<"\nDigite o codigo numerico: ";
+	cin>>tentativaUsuario;
+	
+	if (tentativaUsuario==acessoAdm){
+		cout<<"Codigo Validado!";
+	}
+	else if (tentativaUsuario==acessoFuncionario){
+		cout<<"Codigo Validado!";
+	}
+	else if (tentativaUsuario==acessoVisitante){
+		cout<<"Codigo Validado!";
+	}
+	else {
+		cout<<"Codigo Invalido!! Tente novamente!!";
+	}
+	
+	}while (tentativaUsuario!=acessoAdm and tentativaUsuario!=acessoFuncionario and tentativaUsuario!=acessoVisitante);
+	
+	//Condicional em Switch para demonstrar o tipo de acesso;
+	switch (tentativaUsuario){
+		case 145:
+			cout<<"\n\n        >>>SEJA BEM VINDO<<<";
+			cout<<"\n========================================";
+			cout<<"\n          ACESSO TOTAL :) ";
+			cout<<"\n========================================";
+			break;
+		case 235:
+			cout<<"\n\n        >>>SEJA BEM VINDO<<<";
+			cout<<"\n========================================";
+			cout<<"\n          ACESSO BASICO :/ ";
+			cout<<"\n========================================";
+			break;
+		case 322:
+			cout<<"\n\n        >>>SEJA BEM VINDO<<<";
+			cout<<"\n========================================";
+			cout<<"\n          ACESSO RESTRITO :(";
+			cout<<"\n========================================";
+			break;
+		}
+
+	return 0;
+}
