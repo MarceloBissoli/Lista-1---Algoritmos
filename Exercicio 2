@@ -1,0 +1,59 @@
+//Exercicio 2 - Notas em Switch
+#include <iostream>
+using namespace std;
+
+int main (){
+	//Declaração das variáveis
+	float nota1, nota2, lista1, lista2, mediaFinal, FatorProdutividade;
+	char tipoAluno;
+	
+	//entradas de notas 1 e 2 + controle de verificação;
+	do{
+	cout<<"Digite a nota 1: ";
+	cin>>nota1;
+	cout<<"Digite a nota 2: ";
+	cin>>nota2;
+
+	}while (nota1<0 or nota1>10 or nota2<0 or nota2>10);
+	
+	//entrada do tipo de aluno;
+	cout<<"Digite o tipo de aluno! (R --> Aluno Regular / E --> Aluno em Regime Especial): ";
+	cin>>tipoAluno;
+	
+	//identificacao do tipo de aluno + calculo de média;
+	switch (tipoAluno){
+		case 'R' : case 'r': 
+			cout<<"!!Aluno Regular Selecionado!!";
+			do{
+			cout<<"\nDigite a lista 1: ";
+			cin>>lista1;
+			cout<<"Digite a lista 2: "; 
+			cin>>lista2;
+			}while (lista1<0 or lista1>10 or lista2<0 or lista2>10); //Controle de entrada das listas 1 e 2;
+			cout<<"Informe o Fator Produtividade: "; //entrada do Fator Produtividade;
+			cin>>FatorProdutividade;
+			mediaFinal = (((nota1+nota2)/2)*0.5)+(((lista1+lista2)/2)*0.4)+(FatorProdutividade*0.1); //calculo da media se o Tipo de aluno for Regular;
+			break;
+		case 'E' : case 'e':
+			cout<<"!!Aluno Em Regime Especial Selecionado!!"; 
+			mediaFinal = (nota1+nota2)/2.0; //calculo da media se o Tipo de aluno for Regime Especial;
+			break;
+		default: 
+			cout<<"!!Tipo invalido!! Programa Encerrado";
+			return 0;
+	}
+	//verificação das médias e apresentação da mensagem;
+	if (mediaFinal>=6.0){
+		cout<<"\nMedia final do aluno: "<<mediaFinal;
+		cout<<"\nAprovado";
+	}
+	else if (mediaFinal >=2.0 and mediaFinal <=5.9){
+		cout<<"\nMedia final do aluno: "<<mediaFinal;
+		cout<<"\nSubstitutiva";
+	}
+	else{
+		cout<<"\nMedia final do aluno: "<<mediaFinal;
+		cout<<"\nReprovado";
+	}
+	return 0;
+}
