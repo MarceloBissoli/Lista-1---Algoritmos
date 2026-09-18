@@ -1,0 +1,50 @@
+//Exercício 3 - Conversor de Temperaturas;
+#include <iostream>
+using namespace std;
+
+int main (){
+	//declaracao de variaveis;
+	float C, F, K;
+	char escolhaTemp, escolhaLooping;
+	
+	do{ 
+	//entrada variavel Celsius (C);
+	cout<<"Temperatura em Celsius: ";
+	cin>>C;
+	
+	//Entrada da variavel de escolha + verificação;
+	do{
+	cout<<"Para qual Temperatura deseja converter?(F -->Fahrenheit / K -->Kelvin)\nResposta: ";
+	cin>>escolhaTemp;
+	}while (escolhaTemp!='F'and escolhaTemp!='f'and escolhaTemp!='k'and escolhaTemp!='K');
+	
+	//Processamento de dados;
+	F = (C*1.8)+32;
+	K = C + 273.15;
+	
+	//apresentação das conversões de acordo com a escolha;
+	if (escolhaTemp=='F'or escolhaTemp=='f'){
+		cout<<"!!CONVERSAO PARA FAHRENHEIT ESCOLHIDO!!";
+		cout<<"\nTemperatura igual a: "<<F;
+	}
+	else {
+		cout<<"!!CONVERSAO PARA KELVIN ESCOLHIDO!!";
+		cout<<"\nTemperatura igual a: "<<K;
+	}
+	
+	//Entrada Variavel de Looping + verificação de entrada;
+	do {
+	cout<<"\nDeseja realizar uma nova conversao?(S/N)\nResposta: ";
+	cin>>escolhaLooping;
+	
+	}while (escolhaLooping!='S' and escolhaLooping!='s' and escolhaLooping!='n' and escolhaLooping!='N');
+	
+	//condicional para retornar ao programa;
+	}while (escolhaLooping == 's' or escolhaLooping == 'S');
+	
+	//Encerramento do programa;
+	cout<<"\nPrograma Encerrado!";
+	
+	return 0;
+	
+}
