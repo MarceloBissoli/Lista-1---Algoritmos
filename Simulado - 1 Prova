@@ -1,0 +1,48 @@
+//PROGRAMA PARA LER O TIPO DE IMÓVEL E CONSUMO;
+#include <iostream>
+using namespace std;
+
+int main (){
+ //DECLARAÇÃO DE VARIÁVEIS;
+ char TipoImovel;
+ float ConsumoMensal,ValorIluminacao,ValorEnergia,ValorTotal;
+
+ //ENTRADA DE DADOS + VERIFICAÇÃO DO TIPO DE IMÓVEL;
+ do{
+  cout<<"Digite o tipo de imovel (R->Residencial / C->Comercial): ";
+  cin>>TipoImovel;
+ }while (TipoImovel!='C'and TipoImovel!='c'and TipoImovel!='R'and TipoImovel !='r');
+ cout<<"\nInforme o consumo de Energia (Kw): ";
+ cin>>ConsumoMensal;
+ cout<<"\nInforme o valor da Taxa de Iluminacao: ";
+ cin>>ValorIluminacao;
+
+ //CONDICIONAL EM SWITCH PARA IDENTIFICAÇÃO DE CÁLCULOS + PROCESSAMENTO DE CONTAS;
+ switch (TipoImovel){
+  case 'r': case 'R':
+   ValorEnergia = ConsumoMensal * 0.75;
+   ValorTotal = ValorEnergia + ValorIluminacao;
+   break;
+  case 'c': case 'C':
+   ValorEnergia = ConsumoMensal * 1.10;
+   ValorTotal = ValorEnergia + ValorIluminacao;
+ }
+
+ //CONDICIONAL EM IF PARA CLASSIFICAÇÃO DO PERFIL DE CONSUMO;
+ if(ConsumoMensal <=150.0){
+  cout<<"Consumo Baixo";
+ }
+ else if (ConsumoMensal>150.0 and ConsumoMensal <=400.0){
+  cout<<"\nConsumo Moderado";
+ }
+ else {
+  cout<<"\nConsumo Elevado";
+ }
+
+ //ENCERRAMENTO DO PROGRAMA COM EXIBIÇÃO DE VALORES;
+ cout<<"\nValor da Energia: "<<ValorEnergia;
+ cout<<"\nTaxa: "<<ValorIluminacao;
+ cout<<"\nValor total da Conta: "<<ValorTotal;
+ 
+ return 0;
+}
